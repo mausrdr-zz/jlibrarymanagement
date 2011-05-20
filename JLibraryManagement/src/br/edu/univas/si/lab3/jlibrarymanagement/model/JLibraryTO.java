@@ -1,4 +1,4 @@
-package br.edu.univas.si.lab3.jlibrarymanagement.mobile;
+package br.edu.univas.si.lab3.jlibrarymanagement.model;
 /**
  * 
  * Transfer Object
