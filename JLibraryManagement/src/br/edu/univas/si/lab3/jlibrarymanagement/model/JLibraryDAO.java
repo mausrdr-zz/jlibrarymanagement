@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class JLibraryDAO {
 	
-	private ArrayList<JLibraryStudentTO>studentList;
+	private ArrayList<JLibraryStudentTO> studentList;
 	
 	public JLibraryDAO(){
 		studentList = new ArrayList<JLibraryStudentTO>();
