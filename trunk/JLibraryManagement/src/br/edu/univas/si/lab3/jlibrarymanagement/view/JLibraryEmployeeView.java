@@ -1,8 +1,10 @@
 package br.edu.univas.si.lab3.jlibrarymanagement.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryEmployeeController;
+import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 
 public class JLibraryEmployeeView {
 	
@@ -21,7 +23,7 @@ public class JLibraryEmployeeView {
 		System.out.println("1) Students Management");
 		System.out.println("2) Books Management");
 		System.out.println("3) Rent Books Management");
-		System.out.println("4) Exit\n");
+		System.out.println("4) Return to Main Menu\n");
 		employeeController.menuEmployeeMainMenuChoice(getEmployeeMainMenuChoice());
 	}
 	/**
@@ -60,7 +62,7 @@ public class JLibraryEmployeeView {
 		System.out.println("2) List All");
 		System.out.println("3) Update One");
 		System.out.println("4) Delete One");
-		System.out.println("5) Return to Main Menu\n");
+		System.out.println("5) Return to Employee Main Menu\n");
 		employeeController.menuEmployeeStudentChoice(getEmployeeStudentChoice());
 	}
 	/**
@@ -94,20 +96,14 @@ public class JLibraryEmployeeView {
 		System.out.println("\n-----------------------------------------------\n");
 	}
 
-	public void exitApp() {
+	public Integer getStudentId() {
 		separator();
-		System.out.println("Bye Bye for now!");
-		System.exit(0);
-	}
-
-	public String getStudentCpf() {
-		separator();
-		String cpf = null;
+		Integer id = null;
 		do{
-			System.out.print("Inform the cpf: ");
-			cpf = input.next() + input.nextLine();			
-		} while(cpf == null);
-		return cpf;
+			System.out.print("Inform the ID: ");
+			id = input.nextInt();			
+		} while(id == null);
+		return id;
 	}
 
 	public void showEmployeeBookMenu() {
@@ -118,5 +114,69 @@ public class JLibraryEmployeeView {
 	public void showEmployeeRentMenu() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public JLibraryStudentTO getUpdateStudentInfo(JLibraryStudentTO student) {
+		separator();
+		System.out.print("Inform new name: ");
+		student.setName(input.next() + input.nextLine());
+		return student;
+	}
+
+	public void showEmployeeStudentUpdateMenu() {
+		separator();
+		System.out.println("Update Student Info");
+		separator();
+		System.out.println("1) Update Name");
+		System.out.println("2) Update Address");
+		System.out.println("3) Update E-mail");
+		System.out.println("4) Update Phone");
+		System.out.println("5) Update CPF");
+		System.out.println("6) Update Password");
+		System.out.println("7) Update School Year");
+		System.out.println("8) Return to Student Management Menu");
+		employeeController.menuEmployeeStudentUpdateMenu(getEmployeeStudentUpdateChoice());
+	}
+
+	private int getEmployeeStudentUpdateChoice() {
+		String employeeStudentUpdateChoiceStr;
+		int employeeStudentUpdateChoice = -1;
+		Boolean isValidChoice = false;
+		
+		do {
+			try {
+				System.out.print("Inform your choice: ");
+				employeeStudentUpdateChoiceStr = input.nextLine();
+				employeeStudentUpdateChoice = Integer.parseInt(employeeStudentUpdateChoiceStr);
+				if(employeeStudentUpdateChoice < 1 || employeeStudentUpdateChoice > 8) {
+					throw new Exception("Invalid value!");
+				}
+				isValidChoice = true;
+			}
+			catch (Exception e) {
+				System.out.println("\nError: " + e.getMessage());
+				System.out.println("Please, inform a valid value!\n");
+			}
+		}while(!isValidChoice);
+		return employeeStudentUpdateChoice;
+	}
+
+	public void showList(ArrayList<JLibraryStudentTO> students) {
+		for(JLibraryStudentTO s : students) {
+			separator();
+			System.out.println("ID: " + s.getId());
+			System.out.println("Name: " + s.getName());
+			System.out.println("Address: " + s.getAddress());
+			System.out.println("Email: " + s.getEmail());
+			System.out.println("Phone: " + s.getPhone());
+			System.out.println("CPF: " + s.getCpf());
+			System.out.println("University Course: " + s.getUniversityStudy());
+			System.out.println("Scholl Year: " + s.getSchollYear());
+		}
+	}
+
+	public JLibraryStudentTO getStudentInfo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
