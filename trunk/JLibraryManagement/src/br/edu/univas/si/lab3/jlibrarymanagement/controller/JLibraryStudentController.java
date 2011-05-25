@@ -35,9 +35,10 @@ public class JLibraryStudentController {
 
 	private void consultBook() {
 		String pesquisa = view.searchBook();
-		//TODO implementar primeiro
+		view.showList(pesquisa);
+		
 		
 	}
 	
-	
+
 }
