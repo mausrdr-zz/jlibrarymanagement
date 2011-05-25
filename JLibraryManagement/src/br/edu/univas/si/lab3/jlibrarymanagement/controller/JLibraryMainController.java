@@ -14,6 +14,9 @@ public class JLibraryMainController {
 		this.studentDao = studentDao;
 		this.mainView = new JLibraryMainView(this);
 	}
+	public void initialize(){
+		mainView.showMainMenu();
+	}
 	
 	public void mainInitialize() {
 		mainView.showMainMenu();
