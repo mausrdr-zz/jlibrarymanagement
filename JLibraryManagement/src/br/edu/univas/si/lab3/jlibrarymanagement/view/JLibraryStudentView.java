@@ -1,8 +1,11 @@
 package br.edu.univas.si.lab3.jlibrarymanagement.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryStudentController;
+import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryBooksTO;
+import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentDAO;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 
 public class JLibraryStudentView {
@@ -44,11 +47,27 @@ public class JLibraryStudentView {
 		}while(validad);
 		return option;
 	}
+	
 	public String searchBook(){
-		System.out.println("Inform name Book:");
+		System.out.println("Inform the title of the Book:");
 		String bookname = getLine();
 		
 		return bookname;
+	}
+	
+	public void showList(String search){
+		ArrayList<JLibraryBooksTO>books = new ArrayList<JLibraryBooksTO>();
+		for(JLibraryBooksTO book : books){
+			if(book.getName().equalsIgnoreCase(search)){
+				System.out.println("Codigo: "+book.getId()+" / name "+book.getName());
+			}
+			else{
+				
+			}
+			
+		}
+		System.out.println("No book found ! ");
+			showMainStudent();
 	}
 	private String getLine() {
 		
