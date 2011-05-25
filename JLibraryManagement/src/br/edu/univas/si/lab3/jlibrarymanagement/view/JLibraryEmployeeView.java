@@ -60,7 +60,7 @@ public class JLibraryEmployeeView {
 		System.out.println("2) List All");
 		System.out.println("3) Update One");
 		System.out.println("4) Delete One");
-		System.out.println("5) Exit\n");
+		System.out.println("5) Return to Main Menu\n");
 		employeeController.menuEmployeeStudentChoice(getEmployeeStudentChoice());
 	}
 	/**
