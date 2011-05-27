@@ -16,7 +16,9 @@ public class JLibraryEmployeeView {
 		input = new Scanner(System.in);
 	}
 	
+	
 	public void showEmployeeMainMenu() {
+		
 		separator();
 		System.out.println("Employee Main Menu");
 		separator();

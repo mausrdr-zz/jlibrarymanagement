@@ -3,6 +3,7 @@ package br.edu.univas.si.lab3.jlibrarymanagement.view;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryMainController;
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryStudentController;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryBooksTO;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentDAO;
@@ -11,6 +12,7 @@ import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 public class JLibraryStudentView {
 	
 	private JLibraryStudentController controller;
+	private JLibraryMainController mainController;
 	private Scanner input;
 	
 	public JLibraryStudentView (JLibraryStudentController c){
@@ -18,6 +20,11 @@ public class JLibraryStudentView {
 		input = new Scanner(System.in);
 		
 	}
+	public JLibraryStudentView(JLibraryMainController m) {
+		this.mainController = m;
+		input = new Scanner(System.in);
+	}
+	
 	public void showMainStudent(){
 		System.out.println("1) Reserv Book");
 		System.out.println("2) Consult Book");

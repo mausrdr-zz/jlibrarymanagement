@@ -24,7 +24,39 @@ public class JLibraryMainView {
 		separator();
 		System.out.println("Main Menu");
 		separator();
+		System.out.println("1) Employee");
+		System.out.println("2) Student");
+		System.out.println("3) Admin");
+		mainController.mainMenu(getUser());
+		
+		
 	}
+
+	
+		private int getUser() {
+			String userchoice;
+			int option = -1;
+			Boolean validad = false;
+			do{
+			try{
+				System.out.println("Inform option:");
+				userchoice=input.next()+input.nextLine();
+				option=Integer.parseInt(userchoice);	
+				if(option <1 || option >3){
+					
+					throw new Exception("Value invalid");
+					
+				}
+				validad=true;
+				
+			}
+			catch (Exception e) {
+				System.out.println("Inform valid value !");
+			}
+			}while(!validad);
+			return option;
+		}
+	
 
 	private void separator() {
 		System.out.println("\n----------------------------------------\n");
