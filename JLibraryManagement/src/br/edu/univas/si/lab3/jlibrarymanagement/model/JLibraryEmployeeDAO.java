@@ -2,6 +2,8 @@ package br.edu.univas.si.lab3.jlibrarymanagement.model;
 
 import java.util.ArrayList;
 
+import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryEmployeeController;
+
 public class JLibraryEmployeeDAO {
 	private ArrayList<JLibraryEmployeeTO> employeeList;
 	private ArrayList<JLibraryStudentTO> studentList;

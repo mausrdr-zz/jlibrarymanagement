@@ -187,7 +187,24 @@ public class JLibraryEmployeeView {
 	}
 
 	public JLibraryStudentTO getStudentInfo() {
-		// TODO Auto-generated method stub
-		return null;
+		JLibraryStudentTO student = new JLibraryStudentTO();
+		System.out.println("ID:"); 
+		student.setId(input.nextInt());
+		System.out.println("Name:"); 
+		student.setName(input.next()+input.nextLine());
+		System.out.println("Address:");
+		student.setAddress(input.next()+input.nextLine());
+		System.out.println("Email:");
+		student.setEmail(input.next()+input.nextLine());
+		System.out.println("Phone:");
+		student.setPhone(input.next()+input.nextLine());
+		System.out.println("CPF:");
+		student.setCpf(input.next()+input.nextLine());
+		System.out.println("University Course:");
+		student.setUniversityStudy(input.next()+input.nextLine());
+		System.out.println("Scholl Year:");
+		student.setSchollYear(input.next()+input.nextLine());
+		
+		return student;
 	}
 }
