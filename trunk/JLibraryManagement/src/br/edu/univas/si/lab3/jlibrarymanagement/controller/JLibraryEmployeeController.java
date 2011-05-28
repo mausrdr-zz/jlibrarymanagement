@@ -17,7 +17,8 @@ public class JLibraryEmployeeController {
 	
 	public JLibraryEmployeeController(JLibraryEmployeeDAO employeeDao) {
 		this.employeeDao = employeeDao;
-		this.employeeView = new JLibraryEmployeeView(this);		
+		this.employeeView = new JLibraryEmployeeView(this);	
+		this.mainView = new JLibraryMainView(null);
 	}
 	
 	
