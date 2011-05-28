@@ -7,13 +7,16 @@ import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryStudentView;
 
 public class JLibraryStudentController {
 	private JLibraryStudentDAO dao;
-	private JLibraryStudentView view;
+	private JLibraryStudentView studentView;
+	private JLibraryStudentController maincontroller;
 	
 	public JLibraryStudentController(JLibraryStudentDAO dao){
 		this.dao= dao;
-		this.view = new JLibraryStudentView(this);
+		this.studentView = new JLibraryStudentView(this);
 	}
 	
+	
+
 	public void menuStudent(int option){
 		switch(option){
 		
@@ -34,8 +37,8 @@ public class JLibraryStudentController {
 	}
 
 	private void consultBook() {
-		String pesquisa = view.searchBook();
-		view.showList(pesquisa);
+		String pesquisa = studentView.searchBook();
+		studentView.showList(pesquisa);
 		
 		
 	}

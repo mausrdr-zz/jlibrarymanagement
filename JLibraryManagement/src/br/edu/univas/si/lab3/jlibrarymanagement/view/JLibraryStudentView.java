@@ -51,7 +51,7 @@ public class JLibraryStudentView {
 		catch (Exception e) {
 			System.out.println("Inform valid value !");
 		}
-		}while(validad);
+		}while(!validad);
 		return option;
 	}
 	
