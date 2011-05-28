@@ -4,19 +4,28 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryEmployeeController;
+import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryMainController;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 
 public class JLibraryEmployeeView {
 	
 	private JLibraryEmployeeController employeeController;
 	private Scanner input;
+	private JLibraryEmployeeView employeeView;
+	private JLibraryMainController mainController;
 	
+
 	public JLibraryEmployeeView(JLibraryEmployeeController e) {
 		this.employeeController = e;
 		input = new Scanner(System.in);
+		
+	}
+	public JLibraryEmployeeView(JLibraryMainController m){
+		this.mainController = m;
+		input = new Scanner(System.in);
 	}
 	
-	
+
 	public void showEmployeeMainMenu() {
 		
 		separator();

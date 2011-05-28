@@ -7,7 +7,6 @@ import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryMainControlle
 
 public class JLibraryMainView {
 	private JLibraryMainController mainController;
-	private JLibraryEmployeeController employeeController;
 	private Scanner input;
 	
 	public JLibraryMainView(JLibraryMainController m) {
@@ -15,11 +14,7 @@ public class JLibraryMainView {
 		input = new Scanner(System.in);
 	}
 
-	public JLibraryMainView(JLibraryEmployeeController e) {
-		this.employeeController = e;
-		input = new Scanner(System.in);
-	}
-
+	
 	public void showMainMenu() {
 		separator();
 		System.out.println("Main Menu");

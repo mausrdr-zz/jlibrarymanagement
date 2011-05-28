@@ -6,6 +6,7 @@ import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryEmployeeDAO;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryEmployeeView;
 import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryMainView;
+import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryStudentView;
 
 public class JLibraryEmployeeController {
 	
@@ -13,16 +14,14 @@ public class JLibraryEmployeeController {
 	private JLibraryEmployeeView employeeView;
 	private JLibraryMainView mainView;
 	
+	
 	public JLibraryEmployeeController(JLibraryEmployeeDAO employeeDao) {
 		this.employeeDao = employeeDao;
-		this.employeeView = new JLibraryEmployeeView(this);
-		this.mainView = new JLibraryMainView(this);
+		this.employeeView = new JLibraryEmployeeView(this);		
 	}
 	
-	public void employeeInitialize() {
-		employeeView.showEmployeeMainMenu();
-	}
 	
+		
 	public void menuEmployeeStudentChoice(int employeeStudentChoice) {
 		switch(employeeStudentChoice) {
 			case 1:
