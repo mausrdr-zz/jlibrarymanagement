@@ -8,13 +8,15 @@ public class JLibraryEmployeeDAO {
 	private ArrayList<JLibraryEmployeeTO> employeeList;
 	private ArrayList<JLibraryStudentTO> studentList;
 	
+	
 	public JLibraryEmployeeDAO() {
 		employeeList = new ArrayList<JLibraryEmployeeTO>();
 		studentList = new ArrayList<JLibraryStudentTO>();
+		
 	}
 	
 	public void create(JLibraryEmployeeTO employee) {
-		employeeList.add(employee);
+			employeeList.add(employee);
 	}
 
 	public void delete(Integer id) {
@@ -60,7 +62,7 @@ public class JLibraryEmployeeDAO {
 	}
 
 	public void create(JLibraryStudentTO student) {
-		// TODO Auto-generated method stub
+		studentList.add(student);
 		
 	}
 }

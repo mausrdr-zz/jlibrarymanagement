@@ -28,6 +28,7 @@ public class JLibraryStudentView {
 	public void showMainStudent(){
 		System.out.println("1) Reserv Book");
 		System.out.println("2) Consult Book");
+		System.out.println("3) Return Main Menu");
 		controller.menuStudent(getUser());
 		
 	}	
@@ -35,22 +36,24 @@ public class JLibraryStudentView {
 	
 	private int getUser() {
 		String userchoice;
-		int option = 0;
+		int option = -1;
 		Boolean validad = false;
 		do{
 		try{
 			System.out.println("Inform option:");
 			userchoice=input.nextLine();
 			option=Integer.parseInt(userchoice);
-			if(option <1 || option >2){
+			if(option <1 || option >3){
 				throw new Exception("Value invalid");
+				
 			}
-			validad=true;
 			
+			validad=true;
 		}
 		catch (Exception e) {
 			System.out.println("Inform valid value !");
 		}
+		
 		}while(!validad);
 		return option;
 	}

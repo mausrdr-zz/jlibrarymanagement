@@ -3,6 +3,7 @@ package br.edu.univas.si.lab3.jlibrarymanagement.controller;
 import java.util.ArrayList;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryEmployeeDAO;
+import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentDAO;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryEmployeeView;
 import br.edu.univas.si.lab3.jlibrarymanagement.view.JLibraryMainView;
@@ -13,12 +14,14 @@ public class JLibraryEmployeeController {
 	private JLibraryEmployeeDAO employeeDao;
 	private JLibraryEmployeeView employeeView;
 	private JLibraryMainView mainView;
+	private JLibraryStudentDAO studentDao;
 	
 	
 	public JLibraryEmployeeController(JLibraryEmployeeDAO employeeDao) {
-		this.employeeDao = employeeDao;
+		this.employeeDao =  employeeDao;
 		this.employeeView = new JLibraryEmployeeView(this);	
-		this.mainView = new JLibraryMainView(null);
+		this.mainView = new JLibraryMainView(this);
+		this.studentDao = new JLibraryStudentDAO();
 	}
 	
 	
@@ -64,7 +67,7 @@ public class JLibraryEmployeeController {
 	}
 
 	private void listAllStudent() {
-		ArrayList<JLibraryStudentTO> students = employeeDao.getList();
+		ArrayList<JLibraryStudentTO> students = studentDao.getListStudent();
 		if(students.size() > 0) {
 			employeeView.showList(students);
 		}
@@ -75,13 +78,16 @@ public class JLibraryEmployeeController {
 
 	private void addNewStudent() {
 		JLibraryStudentTO student = employeeView.getStudentInfo();
+		
 		if(student != null) {
-			employeeDao.create(student);
+			
+			studentDao.create(student);
+			
 		}
 		else {
 			System.out.println("Was not possible create the record!");
 		}
-		employeeView.showEmployeeStudentUpdateMenu();
+		employeeView.showEmployeeMainMenu();
 	}
 
 	public void menuEmployeeMainMenuChoice(int employeeMainMenuChoice) {
