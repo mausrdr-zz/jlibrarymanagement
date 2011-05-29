@@ -5,14 +5,15 @@ import java.util.Scanner;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryEmployeeController;
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryMainController;
+import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentDAO;
 import br.edu.univas.si.lab3.jlibrarymanagement.model.JLibraryStudentTO;
 
 public class JLibraryEmployeeView {
 	
 	private JLibraryEmployeeController employeeController;
 	private Scanner input;
-	private JLibraryEmployeeView employeeView;
-	private JLibraryMainController mainController;
+	
+	
 	
 
 	public JLibraryEmployeeView(JLibraryEmployeeController e) {
@@ -20,10 +21,7 @@ public class JLibraryEmployeeView {
 		input = new Scanner(System.in);
 		
 	}
-	public JLibraryEmployeeView(JLibraryMainController m){
-		this.mainController = m;
-		input = new Scanner(System.in);
-	}
+	
 	
 
 	public void showEmployeeMainMenu() {
@@ -206,5 +204,6 @@ public class JLibraryEmployeeView {
 		student.setSchollYear(input.next()+input.nextLine());
 		
 		return student;
+		
 	}
 }

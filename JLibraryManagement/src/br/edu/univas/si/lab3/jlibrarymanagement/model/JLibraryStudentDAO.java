@@ -16,8 +16,8 @@ public class JLibraryStudentDAO {
 	public void create(JLibraryStudentTO student){
 		studentList.add(student); 
 	}
-	public ArrayList<JLibraryStudentDAO>getListStudent(){
-		return (ArrayList<JLibraryStudentDAO>) studentList.clone();
+	public ArrayList<JLibraryStudentTO>getListStudent(){
+		return (ArrayList<JLibraryStudentTO>) studentList.clone();
 	}
 	
 		

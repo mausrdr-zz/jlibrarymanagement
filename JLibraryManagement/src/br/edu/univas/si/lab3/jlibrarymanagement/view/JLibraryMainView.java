@@ -4,14 +4,25 @@ import java.util.Scanner;
 
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryEmployeeController;
 import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryMainController;
+import br.edu.univas.si.lab3.jlibrarymanagement.controller.JLibraryStudentController;
 
 public class JLibraryMainView {
 	private JLibraryMainController mainController;
+	private JLibraryEmployeeController employeeController;
+	private JLibraryStudentController studentController;
 	private Scanner input;
 	
 	public JLibraryMainView(JLibraryMainController m) {
 		this.mainController = m;
 		input = new Scanner(System.in);
+	}
+	public JLibraryMainView(JLibraryEmployeeController e){
+		this.employeeController = e;
+		input = new Scanner(System.in);
+		
+	}
+	public JLibraryMainView(JLibraryStudentController s){
+		this.studentController = s;
 	}
 
 	
