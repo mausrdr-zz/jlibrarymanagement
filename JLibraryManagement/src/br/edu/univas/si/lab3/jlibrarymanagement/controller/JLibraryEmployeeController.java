@@ -38,10 +38,14 @@ public class JLibraryEmployeeController {
 			
 			case 3:
 				employeeView.showEmployeeStudentUpdateMenu();
+				mainView.showMainMenu();
 			break;
 			
 			case 4:
 				delete();
+				mainView.showMainMenu();
+				//TODO verificar erro depois de deletar student. ao clicar no menu principal dá erro
+				
 			break;
 			
 			case 5:
@@ -52,14 +56,14 @@ public class JLibraryEmployeeController {
 
 	private void delete() {
 		Integer id = employeeView.getStudentId();
-		employeeDao.delete(id);
+		studentDao.delete(id);
 	}
 
 	private void updateStudentName() {
 		Integer id = employeeView.getStudentId();
-		JLibraryStudentTO student = employeeDao.getById(id);
+		JLibraryStudentTO student = studentDao.getById(id);
 		if(student != null) {
-			employeeDao.update(employeeView.getUpdateStudentInfo(student));
+			studentDao.update(employeeView.getUpdateStudentInfo(student));
 		}
 		else {
 			System.out.println("Can't update the contact");
@@ -120,8 +124,103 @@ public class JLibraryEmployeeController {
 			case 2:
 				updateStudentAddress();
 			break;
+			
+			case 3:
+				updateStudentEmail();
+				break;
+				
+			case 4:
+				updateStudentPhone();
+				break;
+				
+			case 5:
+				updateStudentCpf();
+				break;
+				
+			case 6:
+				updateStudentPassword();
+				break;
+				
+			case 7:
+				updateStudentSchollYear();
+				break;
+				
+			case 8:
+				break;
+				
 		}
 	}
+	public void menuEmployeeBookChoice(int menuEmployeeBook){
+		switch(menuEmployeeBook){
+		case 1:
+			addBook();
+			break;
+		case 2:
+			updateBook();
+			break;
+		case 3:
+			updateStok();
+			break;
+		case 4:
+			break;
+		}
+	}
+
+	private void updateStok() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void addBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateStudentPassword() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateStudentSchollYear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateStudentCpf() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateStudentPhone() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	private void updateStudentEmail() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 	private void updateStudentAddress() {
 		// TODO Auto-generated method stub

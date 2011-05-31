@@ -11,6 +11,7 @@ public class JLibraryMainView {
 	private JLibraryEmployeeController employeeController;
 	private JLibraryStudentController studentController;
 	private Scanner input;
+	private JLibraryEmployeeView employeeView;
 	
 	public JLibraryMainView(JLibraryMainController m) {
 		this.mainController = m;
@@ -23,6 +24,9 @@ public class JLibraryMainView {
 	}
 	public JLibraryMainView(JLibraryStudentController s){
 		this.studentController = s;
+	}
+	public JLibraryMainView(JLibraryEmployeeView ev){
+		this.employeeView =ev;
 	}
 
 	

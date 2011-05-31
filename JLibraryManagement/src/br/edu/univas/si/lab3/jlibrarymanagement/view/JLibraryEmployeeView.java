@@ -12,6 +12,7 @@ public class JLibraryEmployeeView {
 	
 	private JLibraryEmployeeController employeeController;
 	private Scanner input;
+	private JLibraryMainView mainView; 
 	
 	
 	
@@ -116,7 +117,14 @@ public class JLibraryEmployeeView {
 	}
 
 	public void showEmployeeBookMenu() {
-		// TODO Auto-generated method stub
+		separator();
+		System.out.println("Show Book Menu");
+		separator();
+		System.out.println("1) Add Book");
+		System.out.println("2) Update Book");
+		System.out.println("3) Update Stok");
+		System.out.println("4) Return to Main Menu");
+		employeeController.menuEmployeeBookChoice(getEmployeeStudentChoice());
 		
 	}
 
@@ -145,6 +153,7 @@ public class JLibraryEmployeeView {
 		System.out.println("7) Update School Year");
 		System.out.println("8) Return to Student Management Menu");
 		employeeController.menuEmployeeStudentUpdateMenu(getEmployeeStudentUpdateChoice());
+		
 	}
 
 	private int getEmployeeStudentUpdateChoice() {
